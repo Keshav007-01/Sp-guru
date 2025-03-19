@@ -1,0 +1,15 @@
+
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+
+workflows:
+  primary:
+    steps:
+      - git-clone@8.2.0: {}
+      - flutter-install@0.13.1: {}
+      - flutter-clean@0.0.6: {}
+      - flutter-build@0.9.0:
+          inputs:
+            - platform: android
+            - build_type: apk
+      - deploy-to-bitrise-io@2.11.0: {}
