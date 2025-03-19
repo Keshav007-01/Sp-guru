@@ -1,0 +1,12 @@
+
+workflows:
+  flutter-android:
+    name: Build Flutter Android APK
+    environment:
+      flutter: stable
+    scripts:
+      - flutter clean
+      - flutter pub get
+      - flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
