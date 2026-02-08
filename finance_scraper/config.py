@@ -8,57 +8,60 @@ HEADERS = {
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/120.0.0.0 Safari/537.36"
     ),
-    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
 }
 
-REQUEST_TIMEOUT = 15  # seconds
+REQUEST_TIMEOUT = 20  # seconds
 
 # ---------------------------------------------------------------------------
-# NSE / BSE index & market data
+# NSE APIs (require cookie from homepage first)
 # ---------------------------------------------------------------------------
-NSE_INDEX_URL = "https://www.nseindia.com/api/allIndices"
-NSE_MARKET_STATUS_URL = "https://www.nseindia.com/api/marketStatus"
-NSE_FII_DII_URL = "https://www.nseindia.com/api/fiidiiTradeReact"
 NSE_BASE_URL = "https://www.nseindia.com"
+NSE_INDEX_URL = "https://www.nseindia.com/api/allIndices"
+NSE_FII_DII_URL = "https://www.nseindia.com/api/fiidiiTradeReact"
 
 # ---------------------------------------------------------------------------
-# News RSS feeds (multiple sources for cross-referencing)
+# News RSS feeds
 # ---------------------------------------------------------------------------
 NEWS_RSS_FEEDS = {
     "Moneycontrol": "https://www.moneycontrol.com/rss/MCtopnews.xml",
-    "Moneycontrol_Markets": "https://www.moneycontrol.com/rss/marketreports.xml",
-    "Economic_Times_Markets": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
-    "Economic_Times_Stocks": "https://economictimes.indiatimes.com/markets/stocks/rssfeeds/2146842.cms",
+    "Moneycontrol Markets": "https://www.moneycontrol.com/rss/marketreports.xml",
+    "ET Markets": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
+    "ET Stocks": "https://economictimes.indiatimes.com/markets/stocks/rssfeeds/2146842.cms",
     "LiveMint": "https://www.livemint.com/rss/markets",
-    "NDTV_Profit": "https://feeds.feedburner.com/ndtvprofit-latest",
-    "Business_Standard": "https://www.business-standard.com/rss/markets-106.rss",
+    "Business Standard": "https://www.business-standard.com/rss/markets-106.rss",
 }
 
 # ---------------------------------------------------------------------------
-# Stock recommendation sources (web scraping targets)
+# Moneycontrol pages (reliable scraping targets)
 # ---------------------------------------------------------------------------
-RECOMMENDATION_SOURCES = {
-    "Moneycontrol_Ideas": "https://www.moneycontrol.com/stocks/marketinfo/analyst_rec/index.php",
-    "ET_Recos": "https://economictimes.indiatimes.com/markets/stocks/recos",
-    "Trendlyne_Ideas": "https://trendlyne.com/stock-screeners/top-buy-recommendations/",
-}
+MC_TOP_PICKS_URL = "https://www.moneycontrol.com/stocks/marketinfo/analyst_rec/index.php"
+MC_RESULTS_URL = "https://www.moneycontrol.com/markets/earnings/results-calendar"
+MC_DIVIDENDS_URL = "https://www.moneycontrol.com/stocks/marketinfo/dividends_declared/index.php"
+MC_BONUS_URL = "https://www.moneycontrol.com/stocks/marketinfo/bonus/index.php"
+MC_SPLITS_URL = "https://www.moneycontrol.com/stocks/marketinfo/splits/index.php"
+MC_IPO_URL = "https://www.moneycontrol.com/ipo/ipo-dashboard"
+MC_FII_DII_URL = "https://www.moneycontrol.com/stocks/marketstats/fii_dii_activity/index.php"
 
 # ---------------------------------------------------------------------------
-# Corporate actions (results, dividends, bonuses, IPOs)
+# Trendlyne
 # ---------------------------------------------------------------------------
-BSE_CORP_ACTIONS_URL = "https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w"
-MONEYCONTROL_RESULTS_URL = "https://www.moneycontrol.com/markets/earnings/results-calendar"
+TRENDLYNE_RECOS_URL = "https://trendlyne.com/stock-screeners/top-buy-recommendations/"
+
+# ---------------------------------------------------------------------------
+# Chittorgarh IPO
+# ---------------------------------------------------------------------------
 CHITTORGARH_IPO_URL = "https://www.chittorgarh.com/ipo/ipo_dashboard.asp"
 
 # ---------------------------------------------------------------------------
-# FII / DII activity
+# ET stock recos
 # ---------------------------------------------------------------------------
-MONEYCONTROL_FII_URL = "https://www.moneycontrol.com/stocks/marketstats/fii_dii_activity/index.php"
-TRENDLYNE_FII_URL = "https://trendlyne.com/fii-dii-activity/"
+ET_RECOS_URL = "https://economictimes.indiatimes.com/markets/stocks/recos"
 
 # ---------------------------------------------------------------------------
 # Display settings
 # ---------------------------------------------------------------------------
-MAX_NEWS_PER_SOURCE = 8
-MAX_RECOMMENDATIONS = 25
+MAX_NEWS_PER_SOURCE = 10
+MAX_RECOMMENDATIONS = 30
