@@ -1,0 +1,17 @@
+{
+  "name": "mantra-chanting-android",
+  "version": "1.0.0",
+  "description": "Hindu Mantra Chanting Application",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Android build configured'"
+  },
+  "keywords": [
+    "mantra",
+    "chanting",
+    "android",
+    "capacitor"
+  ],
+  "author": "Mantra Chanting App Team",
+  "license": "ISC"
+}
