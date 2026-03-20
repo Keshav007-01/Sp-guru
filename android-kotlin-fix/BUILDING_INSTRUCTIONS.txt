@@ -1,0 +1,42 @@
+# Building Instructions for Hindu Mantra Chanting Android App
+
+## Issues Resolved:
+This package resolves the following errors:
+
+1. "Could not resolve project :capacitor-android" error by:
+   - Updating the Android Gradle Plugin to version 8.9.0 to match your system
+   - Adding a local implementation of the capacitor-android module
+   - Replacing the node_modules dependency with a local one
+
+2. "Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found in modules" error by:
+   - Forcing all Kotlin dependencies to use the same version (1.8.10)
+   - Adding explicit exclusions for conflicting Kotlin libraries
+   - Resolving version conflicts in the dependency tree
+
+## Import Steps:
+1. Unzip android-project-capacitor-fixed.zip
+2. Open Android Studio
+3. Choose "Open an Existing Project"
+4. Navigate to the extracted folder and select it
+5. Wait for Gradle sync to complete (may take a few minutes)
+
+## Build APK:
+1. From the top menu: Build → Build Bundle(s)/APK(s) → Build APK(s)
+2. Wait for build to complete
+3. Click "locate" in the notification to find your APK
+
+## Troubleshooting:
+- If Android Studio suggests updating Gradle plugin versions, click "Don't remind me again for this project"
+- If prompted about SDK versions, use the recommended settings
+- For any Java version issues, make sure your project is using Java 11 or higher
+- Check Build → Build Output for detailed error messages if needed
+
+## Project Structure:
+- The app includes the web content (HTML/CSS/JS) in assets folder
+- Capacitor framework is used to wrap web content in native Android container
+- All mantras, images and assets are included in the web resources
+
+## Requirements:
+- Android Studio 2023.3 or newer
+- Android SDK 33 or newer
+- JDK 11 or newer
