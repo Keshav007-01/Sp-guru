@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Common background pattern for all deity backgrounds */
+  [class$="-background"] {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    isolation: isolate;
+  }
+
+  [class$="-background"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+  }
+
+  /* Background for Shiva */
+  .shiva-background {
+    background-image: url('/attached_assets/km007._please_create_some_images_of_lord_shankar_932472a5-8ea4-4f17-8168-74386732287f.png');
+  }
+
+  /* Background for Ganesha */
+  .ganesha-background {
+    background-image: url('/attached_assets/km007._generate_a_replica_image_of_Mumbais_laal_baag_cha_raja_g_7f49c12c-e87b-48e5-aae6-77e514e08582.png');
+  }
+
+  /* Background for Krishna */
+  .krishna-background {
+    background-image: url('/attached_assets/km007._generate_lord_Krishna_image_dc63e0ac-1204-438e-9bf5-38dc0981bbfc.png');
+  }
+
+  /* Background for Vishnu */
+  .vishnu-background {
+    background-image: url('/attached_assets/km007._Lord_Vishnu_reclining_on_the_coils_of_the_celestial_serp_2db1fb22-2a58-472f-aa16-3c84169ecc43.png');
+  }
+
+  /* Background for Hanuman */
+  .hanuman-background {
+    background-image: url('/attached_assets/km007._Hanuman_meditating_in_a_serene_forest_clearing_his_eyes__c2f3a626-c39e-48b8-85c9-f2c849aab6c4.png');
+  }
+
+  /* Background for Lakshmi */
+  .lakshmi-background {
+    background-image: url('/attached_assets/km007._Maa_Laxmi_seated_on_a_throne_holding_a_lotus_flower_in_o_89e33049-7c30-4349-86fd-51d3b19d9319.png');
+  }
+
+  /* Background for Saraswati */
+  .saraswati-background {
+    background-image: url('/attached_assets/km007._create_image_of_maa_saraswati_holding_veena_5228a8e1-0af8-4c6f-ab8e-8e7628b46a7d.png');
+  }
+
+  /* Background for Durga */
+  .durga-background {
+    background-image: url('/attached_assets/km007._A_portrait_of_the_Goddess_Durga_adorned_with_her_weapons_4271813a-f85d-47cb-ad64-ac31f6c4c63e.png');
+  }
+
+  /* Background for Ram */
+  .ram-background {
+    background-image: url('/attached_assets/file_00000000466451f6a7ec31fb56223b08_conversation_id=67e6eb10-b9d8-8001-8d79-9701d37341e7&message_id=f28decfe-4572-44a4-80dc-b32f73273613.webp');
+  }
+}
