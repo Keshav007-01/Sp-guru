@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .audio-container {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Audio File Test</h1>
+    
+    <div class="audio-container">
+        <h2>Built-in Browser Audio Sample</h2>
+        <p>This uses a data URI for a simple beep sound:</p>
+        <audio controls>
+            <source src="data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU" type="audio/wav">
+        </audio>
+    </div>
+    
+    <div class="audio-container">
+        <h2>Om Namah Shivaya (External URL)</h2>
+        <audio controls>
+            <source src="https://assets.mixkit.co/sfx/preview/mixkit-bells-of-devotion-581.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <div class="audio-container">
+        <h2>Om Namah Shivaya (Local File)</h2>
+        <audio controls>
+            <source src="/audio/om-namah-shivaya.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <div class="audio-container">
+        <h2>Audio Element with Alternative Sources</h2>
+        <audio controls>
+            <source src="https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav" type="audio/wav">
+            <source src="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <div class="audio-container">
+        <h2>Create Audio with JavaScript</h2>
+        <button id="playSound">Play Generated Tone</button>
+        <script>
+            document.getElementById('playSound').addEventListener('click', function() {
+                const context = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = context.createOscillator();
+                const gainNode = context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(context.destination);
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.value = 432; // frequency in hertz
+                gainNode.gain.value = 0.5;
+                
+                oscillator.start();
+                setTimeout(() => {
+                    oscillator.stop();
+                }, 1000);
+            });
+        </script>
+    </div>
+</body>
+</html>
