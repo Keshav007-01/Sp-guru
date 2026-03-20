@@ -1,0 +1,6 @@
+[
+  {
+    "pkg": "@capacitor/android",
+    "classpath": "com.capacitorjs.plugins.android.AndroidPlugin"
+  }
+]
