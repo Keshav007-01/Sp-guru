@@ -1,0 +1,15 @@
+{
+	"appId": "com.mantra.chanting",
+	"appName": "Hindu Mantra Chanting",
+	"webDir": "dist/public",
+	"server": {
+		"androidScheme": "https"
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 2000,
+			"backgroundColor": "#fffbf5",
+			"spinnerColor": "#F6754D"
+		}
+	}
+}
