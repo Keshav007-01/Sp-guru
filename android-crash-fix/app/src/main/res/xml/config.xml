@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <access origin="*" />
+  
+  <feature name="CordovaHttpPlugin">
+    <param name="android-package" value="com.silkimen.cordovahttp.CordovaHttpPlugin"/>
+  </feature>
+
+  <!-- Allow all navigation -->
+  <allow-navigation href="*" />
+  <!-- Allow all domains -->
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  
+  <!-- Prevent the app from requiring too much memory -->
+  <preference name="LoadUrlTimeoutValue" value="70000" />
+  <preference name="SplashMaintainAspectRatio" value="true" />
+  <preference name="BackgroundColor" value="#ffffff" />
+  
+  <!-- Prevent WebView crashes -->
+  <preference name="WKWebViewOnly" value="true" />
+  <preference name="AllowBackForwardNavigationGestures" value="false" />
+  <preference name="AllowInlineMediaPlayback" value="true" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="EnableViewportScale" value="false" />
+  <preference name="MediaTypesRequiringUserActionForPlayback" value="none" />
+</widget>
