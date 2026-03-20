@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes pulse {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .om-symbol {
+      fill: #F2A81D;
+      stroke: #F2A81D;
+      stroke-width: 2;
+      animation: pulse 4s infinite ease-in-out;
+    }
+    .outer-circle {
+      fill: none;
+      stroke: #F2A81D;
+      stroke-width: 3;
+      stroke-dasharray: 10, 5;
+      animation: rotate 60s infinite linear;
+      transform-origin: center;
+      opacity: 0.6;
+    }
+    .inner-circle {
+      fill: none;
+      stroke: #F2A81D;
+      stroke-width: 2;
+      stroke-dasharray: 5, 3;
+      animation: rotate 30s infinite linear reverse;
+      transform-origin: center;
+      opacity: 0.8;
+    }
+  </style>
+  
+  <!-- Background circles -->
+  <circle cx="250" cy="250" r="240" class="outer-circle" />
+  <circle cx="250" cy="250" r="200" class="inner-circle" />
+  
+  <!-- Om Symbol -->
+  <path class="om-symbol" d="M250 100
+    C290 100, 330 120, 350 160
+    C370 200, 370 260, 340 300
+    C310 340, 260 360, 210 340
+    C180 330, 160 300, 160 270
+    C160 240, 180 210, 210 200
+    C240 190, 270 200, 290 220
+    C310 240, 320 280, 300 310
+    C280 340, 240 350, 210 330
+    C190 320, 180 290, 190 270
+    C200 250, 220 240, 240 250
+    C260 260, 270 290, 250 310
+    
+    M250 310
+    C220 330, 190 360, 160 350
+    C130 340, 120 310, 130 280
+    C140 250, 170 230, 200 240
+    
+    M350 160
+    C340 140, 320 120, 290 100
+    C260 80, 230 80, 200 90
+    C170 100, 150 120, 140 150
+    C130 180, 130 220, 150 250
+    C170 280, 210 300, 250 290
+    C290 280, 320 250, 330 210
+    C340 170, 320 130, 290 110
+    C260 90, 220 90, 190 110
+    C160 130, 140 170, 150 210
+    C160 250, 190 280, 230 290
+    C270 300, 310 290, 340 260
+    C370 230, 380 180, 370 140
+    C360 100, 330 70, 290 60
+    C250 50, 200 60, 170 90
+    C140 120, 130 170, 140 210
+    C150 250, 180 290, 220 310
+    C260 330, 310 330, 350 300
+    C390 270, 410 220, 400 170
+    C390 120, 350 80, 300 70
+    C250 60, 200 80, 170 120
+    " />
+</svg>
