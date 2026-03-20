@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes spin-reverse {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+    @keyframes pulse {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+    .outer-ring {
+      fill: none;
+      stroke: #F2A81D;
+      stroke-width: 2;
+      transform-origin: center;
+      animation: spin-slow 120s infinite linear;
+    }
+    .mid-ring {
+      fill: none;
+      stroke: #F28C38;
+      stroke-width: 1.5;
+      transform-origin: center;
+      animation: spin-reverse 90s infinite linear;
+    }
+    .inner-ring {
+      fill: none;
+      stroke: #F2C94C;
+      stroke-width: 1;
+      transform-origin: center;
+      animation: spin-slow 60s infinite linear;
+    }
+    .center {
+      fill: #F2A81D;
+      animation: pulse 3s infinite ease-in-out;
+    }
+    .mandala-pattern {
+      fill: none;
+      stroke: #F28C38;
+      stroke-width: 1;
+      opacity: 0.8;
+    }
+  </style>
+  
+  <!-- Center point -->
+  <circle cx="250" cy="250" r="15" class="center" />
+  
+  <!-- Inner rings -->
+  <circle cx="250" cy="250" r="50" class="inner-ring" />
+  <circle cx="250" cy="250" r="100" class="mid-ring" />
+  <circle cx="250" cy="250" r="150" class="outer-ring" />
+  <circle cx="250" cy="250" r="200" class="mid-ring" />
+  
+  <!-- Mandala patterns -->
+  <g class="mandala-pattern" style="animation: spin-slow 80s infinite linear; transform-origin: center;">
+    <!-- 8-fold symmetry petals -->
+    <path d="M250,50 C300,100 300,150 250,200 C200,150 200,100 250,50" />
+    <path d="M250,300 C300,350 300,400 250,450 C200,400 200,350 250,300" />
+    <path d="M50,250 C100,300 150,300 200,250 C150,200 100,200 50,250" />
+    <path d="M300,250 C350,300 400,300 450,250 C400,200 350,200 300,250" />
+    
+    <!-- Diagonal petals -->
+    <path d="M125,125 C175,125 175,175 125,175 C125,125 175,125 125,125" />
+    <path d="M325,125 C375,125 375,175 325,175 C325,125 375,125 325,125" />
+    <path d="M125,325 C175,325 175,375 125,375 C125,325 175,325 125,325" />
+    <path d="M325,325 C375,325 375,375 325,375 C325,325 375,325 325,325" />
+  </g>
+  
+  <g class="mandala-pattern" style="animation: spin-reverse 60s infinite linear; transform-origin: center;">
+    <!-- Connecting lines -->
+    <path d="M250,75 L250,425" stroke-dasharray="5,5" />
+    <path d="M75,250 L425,250" stroke-dasharray="5,5" />
+    <path d="M125,125 L375,375" stroke-dasharray="5,5" />
+    <path d="M125,375 L375,125" stroke-dasharray="5,5" />
+    
+    <!-- Small decorative elements -->
+    <circle cx="250" cy="75" r="5" fill="#F2A81D" />
+    <circle cx="250" cy="425" r="5" fill="#F2A81D" />
+    <circle cx="75" cy="250" r="5" fill="#F2A81D" />
+    <circle cx="425" cy="250" r="5" fill="#F2A81D" />
+    <circle cx="125" cy="125" r="5" fill="#F2A81D" />
+    <circle cx="375" cy="375" r="5" fill="#F2A81D" />
+    <circle cx="125" cy="375" r="5" fill="#F2A81D" />
+    <circle cx="375" cy="125" r="5" fill="#F2A81D" />
+  </g>
+  
+  <!-- Outer ornamental border -->
+  <circle cx="250" cy="250" r="240" class="outer-ring" stroke-dasharray="10,5" />
+</svg>
